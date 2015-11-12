@@ -70,7 +70,8 @@ class ReleasePlugin implements Plugin<Project> {
                         project.logger.lifecycle("Scm would be tagged now, but releaseDryRun=true was specified.");
                     } else {
                         project.logger.lifecycle("Tag! you are it! Release plugin will create a new branch ${getSCMService().getBranchName()} for project ${project.name}");
-                        getSCMService().performTagging( getSCMService().getBranchName() + "-RELEASE-" + project.version, msg)
+                        //getSCMService().performTagging( getSCMService().getBranchName() + "-RELEASE-" + project.version, msg)
+                        getSCMService().performTagging(project.version, msg)
                     }
                 }
             }
